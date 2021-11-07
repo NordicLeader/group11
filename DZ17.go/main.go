@@ -22,10 +22,8 @@ func main() {
 		modelCar := r.URL.Query().Get("model")
 		photoCar := r.URL.Query().Get("photo")
 
-		//fmt.Println(markCar, modelCar, photoCar)
 		b := Car{Mark: markCar, Model: modelCar, Photo: photoCar}
 
-		//fmt.Println(jsonstring)
 		if markCar != "" {
 
 			//считываем то что было в файле
@@ -55,6 +53,7 @@ func main() {
 			//записываем в файл данные
 			file.WriteString(jsonstring)
 
+			//выводим на экран
 			fmt.Fprintf(w, jsonstring)
 
 		}
